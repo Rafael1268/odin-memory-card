@@ -112,7 +112,7 @@ h3 {
   margin-top: 110px;
 }
 
-#content {
+#startScreen {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +135,77 @@ button#start {
 
 button#start:hover {
   background-color: #FFF;
+  color: #15151E;
+}
+
+/* Game Screen */
+#gameScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  width: 70vw;
+}
+
+h4 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  font-size: 34px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 226px;
+  height: 255px;
+  background-color: #FFF;
+  border: 2px solid #15151E;
+  border-radius: 15px;
+}
+
+.topCard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 10px 0 10px;
+}
+
+.flag {
+  border: 1.5px solid #15151E;
+  border-radius: 5px;
+  width: 48px;
+}
+
+.iconBtn {
+  width: 26px;
+  background: none;
+  border: none;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+}
+
+.track {
+  height: 150px;
+}
+
+h2 {
+  font-family: "Formula1", sans-serif;
+  font-size: 25px;
   color: #15151E;
 }
 
