@@ -6,7 +6,8 @@ import TrackPopup from "./components/TrackPopup";
 
 const App = () => {
   const [level, setLevel] = useState(1);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(-1);
+  const [highScore, setHighScore] = useState(0);
   const [clicked, setClicked] = useState([]);
 
   return (
@@ -17,8 +18,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StartScreen/>}/>
-          <Route path="/game" element={<GameScreen level={level} score={score} clicked={clicked}/>}/>
-          <Route path="/game" element={<div><GameScreen level={level} score={score} clicked={clicked}/><TrackPopup/></div>}/>
+          <Route path="/game" element={<GameScreen level={level} setLevel={setLevel} score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} clicked={clicked} setClicked={setClicked}/>}/>
+          <Route path="/game" element={<div><GameScreen level={level} score={score} setLevel={setLevel} setScore={setScore} highScore={highScore} setHighScore={setHighScore} clicked={clicked} setClicked={setClicked}/><TrackPopup/></div>}/>
         </Routes>
       </BrowserRouter>
       <div id="footer">
