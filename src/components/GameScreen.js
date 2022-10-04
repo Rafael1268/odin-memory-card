@@ -64,13 +64,11 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
     setCircuitId(e.currentTarget.id - 1);
     const popup = document.getElementById('trackPopupContainer');
     popup.classList.remove('hidden');
-    popup.classList.add('shown');
   };
 
   const hidePopup = () => {
     const popup = document.getElementById('trackPopupContainer');
     popup.classList.add('hidden');
-    popup.classList.remove('shown');
   }
 
   useEffect(() => {
