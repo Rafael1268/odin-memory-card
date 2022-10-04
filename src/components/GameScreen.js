@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import data from"../data.json";
 import Card from "./Card";
+import data from"../data.json";
 
 const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore, clicked, setClicked }) => {
   const navigate = useNavigate();
@@ -32,23 +32,7 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
     setClicked(oldClicked => [...oldClicked, e.target.id]);
   };
 
-  const addListeners = () => {
-    numList.map((num) => {
-      const el = document.getElementById(num.toString());
-      el.addEventListener('click', (e) => {cardClicked(e)});
-    });
-  };
-
-  const removeListeners = () => {
-    numList.map((num) => {
-      const el = document.getElementById(num.toString());
-      console.log(el);
-      el.removeEventListener('click', (e) => {cardClicked(e)});
-    });
-  };
-
   const checkGame = (contains) => {
-    console.log(contains);
     if(contains === true) {
       navigate('/');
       resetGame();
@@ -58,22 +42,20 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
   };
 
   const checkLevel = () => {
-    if(score === level + 2) {
-      removeListeners();
+    if(clicked.length === level + 2) {
+      setClicked([])
+      setLevel(level + 1);
     };
   };
 
   const resetGame = () => {
     setLevel(1);
-    setScore(-1);
+    setScore(0);
     setClicked([]);
   };
 
   useEffect(() => {
-    addListeners();
-  }, [])
-
-  useEffect(() => {
+    if(clicked[0] === undefined) return;
     const latest = clicked[clicked.length - 1]
     let clicked1 = [...clicked];
     clicked1.splice(clicked.length - 1, 1);
@@ -96,7 +78,7 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
       <div id="cards">
         {
           numList.map((num) => (
-            <Card info={data[num - 1]} key={num} id={num}/>
+            <Card cardClicked={cardClicked} info={data[num - 1]} key={num} id={num}/>
           ))
         }
       </div>
