@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GameScreen from "./components/GameScreen";
 import StartScreen from "./components/StartScreen";
 import TrackPopup from "./components/TrackPopup";
+import GameOver from "./components/GameOver";
 
 const App = () => {
   const [level, setLevel] = useState(1);
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<StartScreen/>}/>
           <Route path="/game" element={<GameScreen level={level} setLevel={setLevel} score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} clicked={clicked} setClicked={setClicked}/>}/>
           <Route path="/game" element={<div><GameScreen level={level} score={score} setLevel={setLevel} setScore={setScore} highScore={highScore} setHighScore={setHighScore} clicked={clicked} setClicked={setClicked}/><TrackPopup/></div>}/>
+          <Route path="/game-over" element={<GameOver highScore={highScore}/>}/>
         </Routes>
       </BrowserRouter>
       <div id="footer">

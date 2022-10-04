@@ -34,7 +34,7 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
 
   const checkGame = (contains) => {
     if(contains === true) {
-      navigate('/');
+      navigate('/game-over');
       resetGame();
     } else {
       setScore(score + 1);

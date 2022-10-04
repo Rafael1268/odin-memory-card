@@ -119,7 +119,8 @@ h3 {
   flex-grow: 1;
 }
 
-button#start {
+#start,
+#tryAgain {
   background-color: #E10600;
   color: #FFF;
   border: 4px solid #E10600;
@@ -133,7 +134,8 @@ button#start {
   transition: all 0.15s;
 }
 
-button#start:hover {
+#start:hover,
+#tryAgain:hover {
   background-color: #FFF;
   color: #15151E;
 }
@@ -215,16 +217,12 @@ h2 {
   color: #15151E;
 }
 
-/* Loading Screen */
-#loading {
+/* Game Over Screen */
+#gameOverScreen {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-}
-
-#loadingText {
-  margin-top: 25px;
 }
 
 /* Footer */
