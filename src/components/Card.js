@@ -5,6 +5,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 const Card = ({ cardClicked, info, showPopup }) => {
   return (
     <div className="card">
+      <p>{info.id}</p>
       <div className="topCard">
         <img className="flag" src={info.flag} alt={`Flag of ${info.country}`}></img>
         <button onClick={showPopup} id={info.id} className="iconBtn"><FontAwesomeIcon className="icon" icon={faInfoCircle}/></button>

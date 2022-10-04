@@ -17,11 +17,9 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
     } else {
       console.log(popup.className)
       if (popup.className === 'shown') {
-        console.log('skip');
         return;
       }
     };
-    console.log('no skip');
     let numList = [];
     let numList1 = [];
     for(let i = 0; i < num; i++) {
@@ -92,13 +90,23 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
   }, [score]);
 
   useEffect(() => {
+    if(level === 20) {
+      navigate('/game-won');
+      setLevel(1);
+      setScore(0);
+      setHighScore(0);
+      setClicked([]);
+    };
+  }, [level])
+
+  useEffect(() => {
     randomCard();
   }, [score, level]);
 
   return (
     <div id="gameScreen">
       <TrackPopup circuitId={circuitId} hidePopup={hidePopup}/>
-      <h4 className="marginT25">Level {level} / 15</h4>
+      <h4 className="marginT25">Level {level} / 20</h4>
       <h4>Score: {score}</h4>
       <h4 className="marginB20">High Score: {highScore}</h4>
       <div id="cards">
