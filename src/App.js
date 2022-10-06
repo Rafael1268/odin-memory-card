@@ -7,7 +7,7 @@ import GameOver from "./components/GameOver";
 import GameWon from "./components/GameWon";
 
 const App = () => {
-  const [level, setLevel] = useState(1);
+  const [level, setLevel] = useState(10);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [clicked, setClicked] = useState([]);

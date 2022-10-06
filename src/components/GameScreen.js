@@ -103,10 +103,10 @@ const GameScreen = ({ level, setLevel, score, setScore, highScore, setHighScore,
 
   return (
     <div id="gameScreen">
-      <TrackPopup circuitId={circuitId} hidePopup={hidePopup}/>
       <h4 className="marginT25">Level {level} / 20</h4>
       <h4>Score: {score}</h4>
       <h4 className="marginB20">High Score: {highScore}</h4>
+      <TrackPopup circuitId={circuitId} hidePopup={hidePopup}/>
       <div id="cards">
         {
           numList.map((num) => (
